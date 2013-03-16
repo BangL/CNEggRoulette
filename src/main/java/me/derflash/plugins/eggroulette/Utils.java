@@ -1,11 +1,10 @@
 package me.derflash.plugins.eggroulette;
 
-import net.minecraft.server.v1_4_R1.World;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_4_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_5_R1.CraftWorld;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.CreatureSpawnEvent;
@@ -43,7 +42,7 @@ public class Utils {
     }
     
     static LivingEntity spawnChicken(final Location loc) {
-        final World notchWorld = ((CraftWorld) loc.getWorld()).getHandle();
+        final net.minecraft.server.v1_5_R1.World notchWorld = ((CraftWorld) loc.getWorld()).getHandle();
         final RouletteChicken chicken = new RouletteChicken(loc, notchWorld);
         notchWorld.addEntity(chicken, CreatureSpawnEvent.SpawnReason.CUSTOM);
         return (LivingEntity) chicken.getBukkitEntity();
